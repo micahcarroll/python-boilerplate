@@ -30,8 +30,7 @@ dev = [
 
 [tool.black]
 line-length = 120
-target-version = ['py39']
-include = '\.pyi?$' # Do we want this?
+include = '\.pyi?$' # Includes .pyi stub files
 exclude = ''
 
 [tool.isort]
@@ -42,10 +41,10 @@ known_third_party = ["ray", "torch"]
 # NOTE: flake8 settings for black compatibility:
 # https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
 [flake8]
-ignore = E203, E266, E501, W503, F403, E731
+extend-ignore = E203, E266, E501, W503, F403, E731
 max-line-length = 120
 max-complexity = 18
-select = B,C,E,F,I,W,T4,B9,N
+select = B,C,E,F,I,W,T4,B9,N # <- Should figure out if I want all of these
 
 # Should look into the below more
 [tool.pytest.ini_options]
